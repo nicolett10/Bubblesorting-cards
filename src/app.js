@@ -6,6 +6,7 @@ window.onload = () => {
   let Number = null;
   let Switchnumb = null;
   let Cards = [];
+  // let Cardprev = [],
 
   // Generar type suit
   let generaterandomtype = () => {
@@ -54,6 +55,8 @@ window.onload = () => {
   // boton evento draw
   let button = document.getElementById("draw");
   button.addEventListener("click", function() {
+    document.querySelector(".table").innerHTML = "";
+    Cards = [];
     let inputnumber = document.getElementById("inputnumber").value;
 
     for (let i = 0; i < inputnumber; i++) {
@@ -72,9 +75,10 @@ window.onload = () => {
 
   console.log(Cards);
 
-  // bubble sort
+  // boton sort
   let SortCard = document.getElementById("sort");
   SortCard.addEventListener("click", function() {
+    document.querySelector(".Optionrandom").innerHTML = "";
     let size = Cards.length;
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size - 1; j++) {
